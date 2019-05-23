@@ -14,7 +14,7 @@ namespace TargetedGhostmode
 		internal static Dictionary<int, List<int>> pHideDict = new Dictionary<int, List<int>>();
 
 		/// <summary>
-		/// Hides player target from player source.
+		/// Determines if a player can be seen by another player.
 		/// </summary>
 		/// <param name="source">The player to check visibility on.</param>
 		/// <param name="target">The player being checked for visibility.</param>
@@ -30,7 +30,7 @@ namespace TargetedGhostmode
 		}
 
 		/// <summary>
-		/// Hides player target from player source.
+		/// Gets a list of player IDs that are invisible to a player.
 		/// </summary>
 		/// <param name="source">The player to get the hidden players from.</param>
 		public static IEnumerable<int> HiddenFrom(this Player source)
