@@ -17,3 +17,5 @@ Add the dll as a reference to your plugin to utilize the API.
 Visit the [API Documentation](https://github.com/Cyanox62/TargetedGhostmode/wiki/API) for usage.
 
 **Note that this plugin is still required to be in sm_plugins to function with other plugins.**
+
+For example usage, see [PlayerGhostmode.](https://github.com/Cyanox62/PlayerGhostmode)
