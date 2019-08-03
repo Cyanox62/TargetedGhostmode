@@ -131,13 +131,13 @@ namespace TargetedGhostmode
 			foreach (GameObject gameObject in players)
 			{
 				CharacterClassManager component1 = gameObject.GetComponent<CharacterClassManager>();
-				if (component1.curClass >= 0 && component1.klasy[component1.curClass].fullName.Contains("939"))
+				if (component1.curClass >= 0 && (component1.curClass == (int)Role.SCP_939_53 || component1.curClass == (int)Role.SCP_939_89))
 				{
 					List<PlayerPositionData> modifiedData2 = new List<PlayerPositionData>((IEnumerable<PlayerPositionData>)normalData);
 					for (int index = 0; index < modifiedData2.Count; ++index)
 					{
 						CharacterClassManager component2 = players[index].GetComponent<CharacterClassManager>();
-						if ((double)modifiedData2[index].position.y < 800.0 && component2.klasy[component2.curClass].team != Team.SCP && (component2.klasy[component2.curClass].team != Team.RIP && !players[index].GetComponent<Scp939_VisionController>().CanSee(component1.GetComponent<Scp939PlayerScript>())))
+						if ((double)modifiedData2[index].position.y < 800.0 && component2.curClass >= 0 && component2.klasy[component2.curClass].team != Team.SCP && (component2.klasy[component2.curClass].team != Team.RIP && !players[index].GetComponent<Scp939_VisionController>().CanSee(component1.GetComponent<Scp939PlayerScript>())))
 						{
 							modifiedData2[index] = new PlayerPositionData()
 							{
