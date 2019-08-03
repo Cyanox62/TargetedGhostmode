@@ -9,7 +9,7 @@ namespace TargetedGhostmode
 	name = "TargetedGhostmode",
 	description = "Allows for player specific ghostmode.",
 	id = "cyan.ghostmode",
-	version = "1.0.1",
+	version = "1.0.2",
 	SmodMajor = 3,
 	SmodMinor = 0,
 	SmodRevision = 0
