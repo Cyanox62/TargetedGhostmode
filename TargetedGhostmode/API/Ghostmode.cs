@@ -125,8 +125,7 @@ namespace TargetedGhostmode
 		{
 			List<PlayerPositionData> normalData = new List<PlayerPositionData>();
 			List<GameObject> players = ((IEnumerable<GameObject>)PlayerManager.singleton.players).ToList<GameObject>();
-			foreach (GameObject _player in players)
-				normalData.Add(new PlayerPositionData(_player));
+			foreach (GameObject _player in players) normalData.Add(new PlayerPositionData(_player));
 			__instance.ReceiveData(normalData.ToArray());
 			foreach (GameObject gameObject in players)
 			{
@@ -153,8 +152,7 @@ namespace TargetedGhostmode
 					__instance.CallTargetTransmit(gameObject.GetComponent<NetworkIdentity>().connectionToClient, normalData.ToArray());
 
 				KeyValuePair<int, List<int>> entry = pHideDict.FirstOrDefault(x => x.Key == gameObject.GetComponent<QueryProcessor>().PlayerId);
-				GameObject curPlayer = PlayerManager.singleton.players.FirstOrDefault(x => x.GetComponent<QueryProcessor>().PlayerId == entry.Key && entry.Key != 0);
-				if (curPlayer != null)
+				if (PlayerManager.singleton.players.FirstOrDefault(x => x.GetComponent<QueryProcessor>().PlayerId == entry.Key && entry.Key != 0) != null)
 				{
 					List<PlayerPositionData> modifiedData = new List<PlayerPositionData>((IEnumerable<PlayerPositionData>)normalData);
 
