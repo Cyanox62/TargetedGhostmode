@@ -162,7 +162,6 @@ namespace TargetedGhostmode
 					{
 						if (component1.curClass >= 0 && players[index] != gameObject && entry.Value.Contains(players[index].GetComponent<QueryProcessor>().PlayerId))
 						{
-							CharacterClassManager component2 = players[index].GetComponent<CharacterClassManager>();
 							modifiedData[index] = new PlayerPositionData()
 							{
 								position = Vector3.up * 6000f,
